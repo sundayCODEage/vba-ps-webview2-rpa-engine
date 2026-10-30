@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>13. 仮想タブ（ポップアップ）自動ダウンロード検証</title>
+    <style>
+        body { font-family: "Meiryo", sans-serif; margin: 20px; line-height: 1.6; color: #333; background-color: #f5f5f5; }
+        .container { max-width: 700px; margin: 0 auto; padding: 25px; border: 1px solid #ddd; border-radius: 8px; background: #fff; }
+        button { padding: 10px 20px; cursor: pointer; background-color: #0078d4; color: white; border: none; border-radius: 4px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>仮想タブ（ポップアップ）経由のサイレントDLテスト</h2>
+        <p>業務システムで頻出する「子ウィンドウが開いて即座にCSV/帳票ダウンロードが開始される」挙動を再現します。</p>
+        <button id="btnPopupDl" onclick="openDownloadPopup()">帳票出力（別ウィンドウでDL発火）</button>
+        <p id="statusMsg">待機中...</p>
+    </div>
+
+    <script>
+        function openDownloadPopup() {
+            document.getElementById('statusMsg').innerText = '子ウィンドウを起動しました...';
+            // window.open で新しいウィンドウ（WebView2の仮想タブ）を開く
+            const pop = window.open('about:blank', '_blank', 'width=400,height=300');
+            if (pop) {
+                pop.document.write('<h3>帳票データを生成中...</h3>');
+                setTimeout(function() {
+                    // 子ウィンドウ（仮想タブ）のコンテキスト内でCSVのBlobダウンロードを発火させる
+                    const csvContent = "ID,項目,金額\r\n001,消耗品費,12000\r\n002,通信運搬費,8500\r\n";
+                    // Excelで直接開いても文字化けしないよう、先頭にUTF-8 BOM ("\uFEFF") を付与する
+                    const blob = new pop.Blob(["\uFEFF" + csvContent], { type: 'text/csv;charset=utf-8;' });
+                    const url = pop.URL.createObjectURL(blob);
+                    const a = pop.document.createElement('a');
+                    a.href = url;
+                    a.download = 'default_report.csv';
+                    pop.document.body.appendChild(a);
+                    a.click();
+
+                    // ダウンロード発火後に子ウィンドウを自動で閉じる（親タブP01へ自動復帰）
+                    setTimeout(function() {
+                        pop.close();
+                    }, 800);
+                }, 500);
+            }
+        }
+    </script>
+</body>
+</html>
