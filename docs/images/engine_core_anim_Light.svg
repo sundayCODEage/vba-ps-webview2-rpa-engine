@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 350" width="860" height="350">
+  <defs>
+    <!-- 全体背景グラデーション -->
+    <linearGradient id="bgGradCore" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <!-- ウィンドウのドロップシャドウ -->
+    <filter id="dropShadowCore" x="-4%" y="-4%" width="108%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- 全体背景（外枠マット） -->
+  <rect width="860" height="350" rx="12" fill="url(#bgGradCore)" stroke="#475569" stroke-width="1" />
+
+  <!-- ================= 1. 左側：VBA (Excel シナリオ・司令塔) ================= -->
+  <rect x="20" y="20" width="220" height="310" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#dropShadowCore)" />
+  <!-- Excel タイトルバー (グリーン) -->
+  <path d="M 20 28 A 8 8 0 0 1 28 20 L 232 20 A 8 8 0 0 1 240 28 L 240 48 L 20 48 Z" fill="#15803d" />
+  <circle cx="36" cy="34" r="5" fill="#ef4444" />
+  <circle cx="50" cy="34" r="5" fill="#f59e0b" />
+  <circle cx="64" cy="34" r="5" fill="#22c55e" />
+  <text x="80" y="38" fill="#ffffff" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="12" font-weight="bold">VBA (Excel シナリオ)</text>
+
+  <!-- 上段：コマンド送信ブロック (Ps_Engine.cls) -->
+  <g>
+    <rect x="32" y="62" width="196" height="114" rx="6" fill="#ffffff" stroke="#0284c7" stroke-width="1.8" />
+    <rect x="32" y="62" width="196" height="24" rx="4" fill="#e0f2fe" />
+    <text x="42" y="78" fill="#0369a1" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="11" font-weight="bold">📤 1. コマンド送信 (StdIn)</text>
+    <text x="42" y="102" fill="#334155" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="11" font-weight="bold">rpaEngine.RunAction</text>
+    <text x="46" y="120" fill="#0284c7" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">"Invoke-WebClick"</text>
+    <text x="46" y="136" fill="#0284c7" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">"Export-WebTableToCsv"</text>
+    <rect x="42" y="146" width="176" height="20" rx="3" fill="#f1f5f9" />
+    <text x="50" y="160" fill="#475569" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10">VBA-JSON ペイロード変換</text>
+    <animate attributeName="opacity" values="1;1;0.6;0.6;1" keyTimes="0;0.35;0.5;0.9;1" dur="6s" repeatCount="indefinite" />
+  </g>
+
+  <!-- 下段：結果受信＆シート反映ブロック -->
+  <g>
+    <rect x="32" y="194" width="196" height="122" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.8" />
+    <rect x="32" y="194" width="196" height="24" rx="4" fill="#dcfce7" />
+    <text x="42" y="210" fill="#15803d" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="11" font-weight="bold">📥 4. 結果受信・シート展開</text>
+    <text x="42" y="232" fill="#334155" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10.5">戻り値取得 / 例外構造体パース</text>
+    <!-- ミニExcelグリッド -->
+    <rect x="42" y="242" width="176" height="62" rx="3" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+    <line x1="42" y1="262" x2="218" y2="262" stroke="#cbd5e1" stroke-width="1" />
+    <line x1="42" y1="282" x2="218" y2="282" stroke="#cbd5e1" stroke-width="1" />
+    <line x1="95" y1="242" x2="95" y2="304" stroke="#cbd5e1" stroke-width="1" />
+    <text x="50" y="256" fill="#64748b" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10" font-weight="bold">ID</text>
+    <text x="105" y="256" fill="#64748b" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10" font-weight="bold">取得データ (RESULT)</text>
+    <!-- 取得データ行（後半でハイライト点灯） -->
+    <g opacity="0.25">
+      <rect x="43" y="263" width="174" height="18" fill="#bbf7d0" />
+      <text x="50" y="276" fill="#065f46" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10" font-weight="bold">001</text>
+      <text x="105" y="276" fill="#065f46" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10" font-weight="bold">消耗品費 : 12,000</text>
+      <rect x="43" y="283" width="174" height="20" fill="#dcfce7" />
+      <text x="50" y="297" fill="#065f46" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10" font-weight="bold">002</text>
+      <text x="105" y="297" fill="#065f46" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10" font-weight="bold">通信運搬 :  8,500</text>
+      <animate attributeName="opacity" values="0.2;0.2;0.2;1;1;0.2" keyTimes="0;0.65;0.72;0.78;0.95;1" dur="6s" repeatCount="indefinite" />
+    </g>
+  </g>
+
+  <!-- ================= パイプ通信 1 (VBA ⇔ Engine) ================= -->
+  <!-- 往路: VBA ⇒ Engine (上段) -->
+  <text x="249" y="96" fill="#38bdf8" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10" font-weight="bold">JSON Command</text>
+  <line x1="242" y1="108" x2="318" y2="108" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4,4" />
+  <polygon points="318,108 310,103 310,113" fill="#38bdf8" />
+  <circle cx="242" cy="108" r="6" fill="#facc15" stroke="#ca8a04" stroke-width="1.5">
+    <animate attributeName="cx" values="242;318;318" keyTimes="0;0.18;1" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.16;0.19;1" dur="6s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 復路: Engine ⇒ VBA (下段) -->
+  <text x="247" y="242" fill="#4ade80" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10" font-weight="bold">[RESULT] / [OK]</text>
+  <line x1="318" y1="254" x2="242" y2="254" stroke="#4ade80" stroke-width="2.5" stroke-dasharray="4,4" />
+  <polygon points="242,254 250,249 250,259" fill="#4ade80" />
+  <circle cx="318" cy="254" r="6" fill="#4ade80" stroke="#16a34a" stroke-width="1.5">
+    <animate attributeName="cx" values="318;318;242;242" keyTimes="0;0.60;0.75;1" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.59;0.61;0.74;0.76;1" dur="6s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- ================= 2. 中央：汎用RPA操作エンジン (PowerShell Core) ================= -->
+  <rect x="322" y="20" width="236" height="310" rx="8" fill="#090d16" stroke="#475569" stroke-width="1.5" filter="url(#dropShadowCore)" />
+  <!-- Engine タイトルバー -->
+  <path d="M 322 28 A 8 8 0 0 1 330 20 L 550 20 A 8 8 0 0 1 558 28 L 558 48 L 322 48 Z" fill="#1e293b" />
+  <rect x="334" y="28" width="12" height="12" rx="2" fill="#38bdf8" />
+  <text x="352" y="38" fill="#f8fafc" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="12" font-weight="bold">汎用RPA操作エンジン (PS 5.1)</text>
+
+  <!-- コアルーター (Ps_Engine_Core) -->
+  <g opacity="0.45">
+    <rect x="334" y="58" width="212" height="60" rx="6" fill="#162032" stroke="#0284c7" stroke-width="1.5" />
+    <rect x="334" y="58" width="5" height="60" rx="2" fill="#38bdf8" />
+    <text x="346" y="76" fill="#38bdf8" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="11.5" font-weight="bold">⚙️ Ps_Engine_Core_v303</text>
+    <text x="346" y="94" fill="#cbd5e1" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10.5">・非同期キュー監視 / ルーティング</text>
+    <text x="346" y="110" fill="#fde047" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10.5">・仮想タブ管理 / Win32・DPI統一</text>
+    <animate attributeName="opacity" values="0.45;1;1;0.45;0.45" keyTimes="0;0.15;0.65;0.75;1" dur="6s" repeatCount="indefinite" />
+  </g>
+
+  <!-- 基幹モジュール群 (Core Libs) -->
+  <g opacity="0.45">
+    <rect x="334" y="128" width="212" height="86" rx="6" fill="#1a1836" stroke="#6366f1" stroke-width="1.5" />
+    <rect x="334" y="128" width="5" height="86" rx="2" fill="#818cf8" />
+    <text x="346" y="146" fill="#a5b4fc" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="11.5" font-weight="bold">🚀 基幹モジュール (通信・注入)</text>
+    <text x="346" y="164" fill="#e2e8f0" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">・WebView2_Init / Native API</text>
+    <text x="346" y="180" fill="#38bdf8" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">・WebCDP (WebSocket高速通信)</text>
+    <text x="346" y="196" fill="#f472b6" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">・WebJS (Shadow/iframe透過注入)</text>
+    <animate attributeName="opacity" values="0.45;0.45;1;1;0.45" keyTimes="0;0.18;0.24;0.60;1" dur="6s" repeatCount="indefinite" />
+  </g>
+
+  <!-- 拡張モジュール群 (Extension Libs) -->
+  <g opacity="0.45">
+    <rect x="334" y="224" width="212" height="92" rx="6" fill="#062e1e" stroke="#10b981" stroke-width="1.5" />
+    <rect x="334" y="224" width="5" height="92" rx="2" fill="#34d399" />
+    <text x="346" y="242" fill="#4ade80" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="11.5" font-weight="bold">🛡️ 拡張モジュール (操作・救済)</text>
+    <text x="346" y="260" fill="#e2e8f0" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">・WebAction / XPath / SafeClick</text>
+    <text x="346" y="276" fill="#fde047" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">・DesktopUIA (物理フォールバック)</text>
+    <text x="346" y="292" fill="#cbd5e1" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">・WebDebug (CSV/証跡) / DevTools</text>
+    <animate attributeName="opacity" values="0.45;0.45;1;1;0.45" keyTimes="0;0.22;0.28;0.65;1" dur="6s" repeatCount="indefinite" />
+  </g>
+
+  <!-- ================= 制御通信 2 (Engine ⇔ Web/OS) ================= -->
+  <!-- 往路: Engine ⇒ Web (上段) -->
+  <text x="564" y="96" fill="#f472b6" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10" font-weight="bold">2. 操作 (CDP/UIA)</text>
+  <line x1="560" y1="108" x2="636" y2="108" stroke="#f472b6" stroke-width="2.5" stroke-dasharray="4,4" />
+  <polygon points="636,108 628,103 628,113" fill="#f472b6" />
+  <circle cx="560" cy="108" r="6" fill="#facc15" stroke="#ca8a04" stroke-width="1.5">
+    <animate attributeName="cx" values="560;560;636;636" keyTimes="0;0.22;0.36;1" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.21;0.23;0.35;0.37;1" dur="6s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- 復路: Web ⇒ Engine (下段) -->
+  <text x="564" y="242" fill="#38bdf8" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10" font-weight="bold">3. 抽出 (JSON/DOM)</text>
+  <line x1="636" y1="254" x2="560" y2="254" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="4,4" />
+  <polygon points="560,254 568,249 568,259" fill="#38bdf8" />
+  <circle cx="636" cy="254" r="6" fill="#4ade80" stroke="#16a34a" stroke-width="1.5">
+    <animate attributeName="cx" values="636;636;560;560" keyTimes="0;0.45;0.58;1" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.44;0.46;0.57;0.59;1" dur="6s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- ================= 3. 右側：WebView2 ブラウザ / 業務Webシステム ================= -->
+  <rect x="640" y="20" width="200" height="310" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" filter="url(#dropShadowCore)" />
+  <!-- ブラウザ タイトルバー -->
+  <path d="M 640 28 A 8 8 0 0 1 648 20 L 832 20 A 8 8 0 0 1 840 28 L 840 48 L 640 48 Z" fill="#1e293b" />
+  <circle cx="656" cy="34" r="5" fill="#ef4444" />
+  <circle cx="670" cy="34" r="5" fill="#f59e0b" />
+  <circle cx="684" cy="34" r="5" fill="#22c55e" />
+  <text x="700" y="38" fill="#f1f5f9" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="11.5" font-weight="bold">業務Web / OS画面</text>
+
+  <!-- 業務システム画面の内部要素 -->
+  <rect x="652" y="58" width="176" height="28" rx="4" fill="#0078d4" />
+  <text x="662" y="76" fill="#ffffff" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="11" font-weight="bold">　業務システム (DOM)</text>
+
+  <!-- Shadow DOM / iframe 領域 -->
+  <rect x="652" y="96" width="176" height="150" rx="6" fill="#fffbeb" stroke="#4f46e5" stroke-width="1.5" stroke-dasharray="4,3" />
+  <text x="660" y="112" fill="#3730a3" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10" font-weight="bold">Shadow DOM / 多段iframe</text>
+
+  <!-- 自動入力ボックス -->
+  <rect x="662" y="120" width="156" height="28" rx="4" fill="#ffffff" stroke="#64748b" stroke-width="1.2" />
+  <text x="670" y="138" fill="#0f172a" font-family="Consolas, &#39;Meiryo UI&#39;, monospace" font-size="10.5">Set-WebTextInput</text>
+
+  <!-- 照会・データ取得ボタン -->
+  <rect x="662" y="156" width="156" height="28" rx="4" fill="#2563eb" />
+  <text x="682" y="174" fill="#ffffff" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="11" font-weight="bold">照会・テーブル抽出</text>
+
+  <!-- 抽出対象テーブル -->
+  <rect x="662" y="192" width="156" height="44" rx="3" fill="#ffffff" stroke="#94a3b8" stroke-width="1" />
+  <line x1="662" y1="214" x2="818" y2="214" stroke="#cbd5e1" stroke-width="1" />
+  <text x="670" y="208" fill="#334155" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10">001 | 消耗品費 | 12,000</text>
+  <text x="670" y="228" fill="#334155" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10">002 | 通信運搬 |  8,500</text>
+
+  <!-- サイレントDL / OSダイアログ領域 -->
+  <rect x="652" y="256" width="176" height="60" rx="6" fill="#f1f5f9" stroke="#64748b" stroke-width="1.2" />
+  <text x="662" y="274" fill="#334155" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10.5" font-weight="bold">📄 Fetch DL / 仮想タブ捕獲</text>
+  <text x="662" y="292" fill="#475569" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10">・PDF / CSV サイレント保存</text>
+  <text x="662" y="308" fill="#475569" font-family="Consolas, &#39;Meiryo UI&#39;, sans-serif" font-size="10">・UIA / Win32 物理操作救済</text>
+
+  <!-- Web要素への操作赤枠ハイライト＆波紋アニメーション -->
+  <rect x="660" y="154" width="160" height="32" rx="5" fill="#ef4444" fill-opacity="0.18" stroke="#dc2626" stroke-width="2.5" opacity="0">
+    <animate attributeName="y" values="154;154;190;190" keyTimes="0;0.38;0.42;1" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="height" values="32;32;48;48" keyTimes="0;0.38;0.42;1" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.34;0.36;0.48;0.52;1" dur="6s" repeatCount="indefinite" />
+  </rect>
+  <circle cx="740" cy="170" r="2" fill="none" stroke="#dc2626" stroke-width="2.5" opacity="0">
+    <animate attributeName="r" values="2;2;32;32" keyTimes="0;0.36;0.46;1" dur="6s" repeatCount="indefinite" />
+    <animate attributeName="opacity" values="0;1;0;0" keyTimes="0;0.36;0.46;1" dur="6s" repeatCount="indefinite" />
+  </circle>
+</svg>
