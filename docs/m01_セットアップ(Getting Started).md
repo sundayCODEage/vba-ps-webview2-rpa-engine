@@ -29,6 +29,7 @@
  │    ├── 🚀 テストコード公開サイト用（補足）
  │    ├──  10_shadow_dom .html           ( Shadow DOM 操作テスト )
  │    ├──  11_overlay_mask .html         ( 画面オーバーレイ（マスク）待機テスト )
+ │    ├──  13_popup_download .html       ( 仮想タブ（ポップアップ）自動ダウンロードテスト )
  │    ├── 
  │    ├── 🚀 DevTools / 画面情報エクスポート＆要素ピッカー
  │    ├──  12_scroll_shadow_dom .html    ( スクロール / Shadow DOM / モダンUI / 動的要素 )
