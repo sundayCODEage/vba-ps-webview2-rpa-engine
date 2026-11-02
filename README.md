@@ -1,5 +1,6 @@
 
 <h4 align="center">汎用RPA操作エンジン (VBA × PowerShell × WebView2 Hybrid-Engine / v303)</h4>
+<h6 align="center"><i>// GEMINI 3.1Proで開発したコードを、Gemini 4 Argonで全モジュールを再検証・アップグレード //</i></h6>
 
 <p align="right">
   <sub>作成日: 2026年10月29日 / 作成者: System beginner & AI Collaborator (Gemini)</sub>
