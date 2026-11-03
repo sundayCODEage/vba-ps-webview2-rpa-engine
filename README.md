@@ -205,3 +205,6 @@ flowchart LR
 ### 📜 ライセンス (License)
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.<br>
 このプロジェクトは **MIT License** の下で公開されています。詳しくは [LICENSE](LICENSE) ファイルをご覧ください。
+
+本エンジンおよび各モジュールは、制限のある業務端末環境や日々の定型業務の自動化において、**どなたでも自由にご利用・改変・組み込みしていただけます。**<br>
+「システムに合わせてコマンドを追加したい」「一部のモジュールやピッカー機能だけを切り出して使いたい」といったカスタマイズや機能改良も大歓迎です。同じような環境で自動化に取り組む方々の土台やヒントとして役立てていただければ幸いです。
