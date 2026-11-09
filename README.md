@@ -3,7 +3,7 @@
 <h6 align="center"><i>// GEMINI 3.1Proで開発したコードを、Gemini 4 Argonで全モジュールを再検証・アップグレード //</i></h6>
 
 <p align="right">
-  <sub>作成日: 2026年10月29日 / 作成者: System beginner & AI Collaborator (Gemini)</sub>
+  <sub>作成日: 2026年10月29日（2026/11/07） / 作成者: System beginner & AI Collaborator (Gemini)</sub>
 </p>
 
 <p align="center">
@@ -11,6 +11,14 @@
 </p>
 <h5 align="center">RPA Engine Core Architecture Demo</h5>
 
+---
+ℹ️ **サブ リポジトリ（拡張モジュール）:**
+  [sundayCODEage/vba-ps-webview2-rpa-extensions](https://github.com/sundayCODEage/vba-ps-webview2-rpa-extensions)
+
+**業務システムのUI（2層構造日付・ダミーボタン）を突破する「拡張モジュール＆オーバーライト」(VBA × PowerShell × WebView2)**
+_<sub>「自分で拡張できるスタイル」、「拡張モジュールの組み込みとドットソース・オーバーライト機構」、「自分のシステム開発に合わせてAIで拡張モジュールを作る」など</sub>_
+
+---
 ### 🚀 概要 (Overview)
 レガシーなイントラネット業務システム（財務会計システム等）から、Shadow DOM、多段iframe、動的生成UIなどのDOM構造を持つWebアプリケーションまでを操作するための汎用RPAエンジンです。<br>
 ブラウザ更新に伴う外部WebDriver（Selenium等）のバージョン不一致や、専用ソフトウェアのインストール作業を不要とし、Windows標準の **PowerShell 5.1** と **WebView2ランタイム**（および同梱のDLLファイル配置）で稼働します。
