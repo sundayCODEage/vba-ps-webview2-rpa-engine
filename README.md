@@ -216,3 +216,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 本エンジンおよび各モジュールは、制限のある業務端末環境や日々の定型業務の自動化において、**どなたでも自由にご利用・改変・組み込みしていただけます。**<br>
 「システムに合わせてコマンドを追加したい」「一部のモジュールやピッカー機能だけを切り出して使いたい」といったカスタマイズや機能改良も大歓迎です。同じような環境で自動化に取り組む方々の土台やヒントとして役立てていただければ幸いです。
+
+Keywords: Excel VBA PowerShell 5.1 WebView2 自作RPA ブラウザ自動化 Selenium不要 WebDriver不要 IEモード移行 多段iframe & Shadow DOMの透過探索 要素ピッカー
+
